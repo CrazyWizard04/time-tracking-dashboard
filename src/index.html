@@ -12,20 +12,26 @@
     />
 
     <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="styles.css" />
     <title>Time Tracking Dashboard</title>
   </head>
   <body>
     <main class="dashboard-container">
-      <div class="dashboard-report">
+      <div class="dashboard-user keep">
         <div class="user-details">
-          <p>Report for</p>
-          <h2>Jeremy Robson</h2>
+          <img src="images/image-jeremy.png" alt="Portrait of Jeremy Robson" />
+
+          <div class="user-name">
+            <p>Report for</p>
+            <h2>Jeremy Robson</h2>
+          </div>
         </div>
 
-        <ul class="time-settings">
-          <li>Daily</li>
-          <li>Weekly</li>
-          <li>Monthly</li>
+        <ul class="dashboard-controls">
+          <li class="control-btn active" data-time="daily">Daily</li>
+          <li class="control-btn" data-time="weekly">Weekly</li>
+          <li class="control-btn" data-time="monthly">Monthly</li>
         </ul>
       </div>
     </main>
