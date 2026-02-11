@@ -1,7 +1,7 @@
 const dashboardDiv = document.querySelector(".dashboard-container");
 const controlBtns = document.querySelectorAll(".control-btn");
 
-let selectedTime = "daily";
+let selectedTime = "weekly";
 let cachedData = null;
 
 const fetchData = async () => {
