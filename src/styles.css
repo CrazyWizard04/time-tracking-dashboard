@@ -17,7 +17,11 @@
   --fw-normal: 400;
   --fw-medium: 500;
 
-  --fs-base: 1rem;
+  --fs-base: 1.125rem;
+  --fs-current-stat: clamp(2rem, 4vw, 3.5rem);
+  --fs-previous-stat: clamp(1rem, 4vw, 1.125rem);
+  --fs-username: clamp(1.75rem, 4vw, 2.5rem);
+
   --ff-rubik: "Rubik", sans-serif;
 }
 
@@ -52,7 +56,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  max-width: 1000px;
+  max-width: 1100px;
 }
 
 .dashboard-user {
@@ -89,7 +93,7 @@ body {
 }
 
 .user-name h2 {
-  font-size: 1.75rem;
+  font-size: var(--fs-username);
   font-weight: var(--fw-light);
 }
 
@@ -105,6 +109,7 @@ body {
 .control-btn {
   color: var(--color-purple-500);
   cursor: pointer;
+  transition: color 0.4s ease;
 }
 
 .control-btn.active {
@@ -115,7 +120,7 @@ body {
   padding-top: 2.5rem;
   border-radius: 0.75rem;
   background-repeat: no-repeat;
-  background-position: 90% -10%;
+  background-position: 90% -5%;
 }
 
 .stats-card[data-stats="work"] {
@@ -136,7 +141,6 @@ body {
 .stats-card[data-stats="exercise"] {
   background-color: var(--color-green-400);
   background-image: url("images/icon-exercise.svg");
-  background-position: 90% 0;
 }
 
 .stats-card[data-stats="social"] {
@@ -163,22 +167,26 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
+}
+
+.stats-options {
+  cursor: pointer;
 }
 
 .stats-title {
-  font-size: 1.125rem;
   font-weight: var(--fw-medium);
 }
 
 .current-time {
-  font-size: 2rem;
+  font-size: var(--fs-current-stat);
   font-weight: var(--fw-light);
 }
 
 .previous-time {
-  font-size: 1rem;
-  font-weight: var(--fw-normal);
+  font-weight: var(--fs-previous-stat);
   color: var(--color-navy-200);
+  animation: fade-in 0.5s ease-in;
 }
 
 .footer-section {
@@ -188,9 +196,10 @@ body {
 
 .footer-section a {
   color: var(--color-purple-500);
+  text-decoration: none;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 64rem) {
   .dashboard-container {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -200,13 +209,10 @@ body {
   }
 
   .user-details {
-    flex: 1;
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .user-name h2 {
-    font-size: 2.25rem;
+    flex: 1;
+    gap: 2rem;
   }
 
   .dashboard-controls {
@@ -216,7 +222,7 @@ body {
   }
 
   .card-content {
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .stats-wrapper:last-child {
@@ -224,12 +230,13 @@ body {
     align-items: flex-start;
     gap: 0.5rem;
   }
+}
 
-  .current-time {
-    font-size: 2.75rem;
+@keyframes fade-in {
+  from {
+    opacity: 0;
   }
-
-  .previous-time {
-    font-size: 0.8125rem
+  to {
+    opacity: 1;
   }
 }

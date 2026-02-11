@@ -6,7 +6,7 @@ let cachedData = null;
 
 const fetchData = async () => {
   try {
-    const res = await fetch("./data.json");
+    const res = await fetch("./data/data.json");
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
@@ -37,7 +37,11 @@ const mapData = async (selectedTime) => {
       <div class="card-content">
         <div class="stats-wrapper">
           <h4 class="stats-title">${title}</h4>
-          <img src="images/icon-ellipsis.svg" alt="">
+          <img 
+            src="images/icon-ellipsis.svg" 
+            alt="" 
+            class="stats-options"
+          >
         </div>
         
         <div class="stats-wrapper">
