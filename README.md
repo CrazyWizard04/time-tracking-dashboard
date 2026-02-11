@@ -32,7 +32,7 @@ A responsive time-tracking dashboard that lets users switch between daily, weekl
 
 ### 🔗 Links
 
-- 💡 Solution URL: [Frontend Mentor Submission](---)
+- 💡 Solution URL: [Frontend Mentor Submission](https://www.frontendmentor.io/solutions/time-tracking-dashboard-with-css-and-js--ILcrhpYBP)
 - 🌐 Live Site URL: [Live Demo](https://thewizard04-time-tracking-dashboard.vercel.app)
 
 ---
